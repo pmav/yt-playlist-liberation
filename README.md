@@ -1,4 +1,4 @@
-# MP3 Processor
+# yt-playlist-liberation
 
 A collection of scripts to download, normalize, and tag MP3 files from YouTube playlists.
 
