@@ -1,0 +1,24 @@
+{
+    "playlist": "<playlist_id>",
+    "download_directory": "<output/playlist1>",
+    "download": {
+        "audio_quality": "256K",
+        "audio_format": "mp3",
+        "output_template": "%(playlist_index)s - %(title)s.%(ext)s",
+        "embed_thumbnail": true
+    },
+    "normalize": {
+        "workers": 8,
+        "audio_codec": "libmp3lame",
+        "audio_bitrate": "256k",
+        "docker_image": "slhck/ffmpeg-normalize"
+    },
+    "metadata": {
+        "ollama_host": "http://127.0.0.1:11434",
+        "ollama_model": "qwen3.5:9b",
+        "ollama_endpoint": "/api/generate",
+        "request_timeout": 5,
+        "max_tokens": 64,
+        "think": false
+    }
+}
