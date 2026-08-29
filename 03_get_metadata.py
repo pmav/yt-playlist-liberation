@@ -4,7 +4,6 @@ import os
 import sys
 import json
 import re
-from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 

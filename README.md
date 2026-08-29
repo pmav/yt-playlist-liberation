@@ -14,18 +14,11 @@ A collection of scripts to download, normalize, and tag MP3 files from YouTube p
 
 The workflow expects the following tools and services to be available:
 
-- `ffmpeg`
-- `ffmpeg-normalize` (Install via `pip install ffmpeg-normalize`)
-- `mutagen` (Install via `pip install mutagen`)
-- `python3`
+- Python 3
+    - mutagen (Install via `pip install mutagen`)
 - Docker
-- A working local Ollama server for the metadata extraction step
-- The repo-local `yt-dlp` binary at the project root (`./yt-dlp`)
-
-Optional but commonly used tools:
-
-- `id3v2`
-- `eyeD3`
+- Ollama
+- yt-dlp binary at the project root (`./yt-dlp`)
 
 ## How to use
 

@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import csv
 import json
 import sys
 from pathlib import Path
