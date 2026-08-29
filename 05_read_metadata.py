@@ -6,7 +6,6 @@ import json
 import sys
 from pathlib import Path
 from mutagen.mp3 import MP3
-from mutagen.id3 import ID3, APIC
 
 CONFIG_FILE = Path(os.environ.get('CONFIG_FILE', 'config.json'))
 try:
@@ -74,7 +73,6 @@ def scan_directory(directory):
         return []
 
     print(f"🔍 Scanning directory: {directory}")
-    print("-" * 60)
 
     mp3_files = list(directory.glob("*.mp3")) + list(directory.rglob("*.MP3"))
 
@@ -84,14 +82,13 @@ def scan_directory(directory):
 
     return sorted(mp3_files, key=lambda x: x.name)
 
-def display_results(directory, mp3_files):
+def display_results(mp3_files):
     """Display all results and save to CSV."""
     if not mp3_files:
         return
 
     # Print header
     print(f"\n{'File Name':<120} {'Artist':<25} {'Title':<30}")
-    print("-" * 95)
 
     for file_path in mp3_files:
         if file_path.exists():
@@ -104,17 +101,13 @@ def main():
     if len(sys.argv) > 1:
         directory = Path(sys.argv[1])
 
-    print(f"\n🎵 Music Metadata Extractor")
-    print("=" * 50)
-
     mp3_files = scan_directory(directory)
 
     if mp3_files:
-        display_results(directory, mp3_files)
+        display_results(mp3_files)
 
         # Summary
-        print("-" * 60)
-        print(f"✅ Total MP3 files scanned: {len(mp3_files)}")
+        print(f"\n✅ Total MP3 files scanned: {len(mp3_files)}")
     else:
         print("⚠ No results to display.")
 

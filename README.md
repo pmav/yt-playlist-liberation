@@ -84,14 +84,12 @@ The script matches each JSON record by its exact filename and writes the `artist
 
 ### 5. Read MP3 Metadata
 Display the existing artist, title, and album metadata for MP3 files in a directory:
-```bash
-./05_read_metadata.py p3-normalized
-```
-If no directory is provided, the script scans the current directory:
+
+The script defaults to `download_directory` from `config.json`:
 ```bash
 ./05_read_metadata.py
 ```
-The reader scans MP3 files in the selected directory, displays their filename, artist, title, and album, and handles both single- and multiple-value ID3 frames. It is useful for checking the tags after step 4; when no directory argument is supplied, it uses `normalized_directory` from `config.json`.
+The script scans MP3 files in the specified or default directory and displays their metadata (filename, artist, title, and album) in a formatted table. It gracefully handles both single- and multiple-value ID3 frames, extracting the first value when needed.
 
 ## File Structure
 
